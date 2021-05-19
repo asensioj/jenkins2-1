@@ -14,5 +14,11 @@ pipeline {
         sh './mvnw test'
              }
        }
+    stage('run') {
+      steps {
+        echo "Estoy probando el codigo de Sprint Boot"
+        sh './mvnw spring:boot run'
+             }
+       }
    }
 }
