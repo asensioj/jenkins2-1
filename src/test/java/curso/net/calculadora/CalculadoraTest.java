@@ -1,8 +1,8 @@
-package icurso.net.calculadora;
+package curso.net.calculadora;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class CalculadorarTest {
+public class CalculadoraTest {
      private Calculadora calculator = new Calculadora();
 
      @Test
