@@ -40,6 +40,6 @@ pipeline {
                 }
         }
         failure {
-		echo 'H tenido algun problema'
+		echo "He tenido algun problema"
         }
 }
