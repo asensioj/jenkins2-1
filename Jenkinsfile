@@ -38,8 +38,8 @@ pipeline {
 		echo "He conseguido terminar"
 		sh 'echo ${BRANCH_AUTHOR} Alberto > /tmp/autor.txt'
                 }
-        }
         failure {
 		echo "He tenido algun problema"
+        }
         }
 }
