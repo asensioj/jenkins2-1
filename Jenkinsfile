@@ -19,7 +19,13 @@ pipeline {
         echo "Estoy  generando el JAR del proyecto"
         sh './mvnw package'
              }
-       }
+      post {
+    	     failure {
+        	   echo "He tenido un problema en el Build"
+	           sh 'rm -rf target'
+	          }  
+          }
+    }
     stage('Deploy') {
       steps {
         echo "Estoy desplegando al directorio /tmp del servidor Jenkins "
@@ -27,4 +33,13 @@ pipeline {
              }
        }
    }
+   post {
+        success {
+		echo "He conseguido terminar"
+		sh 'echo ${BRANCH_AUTHOR} Alberto > /tmp/autor.txt'
+                }
+        }
+        failure {
+		echo 'H tenido algun problema'
+        }
 }
